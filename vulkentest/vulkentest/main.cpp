@@ -12,6 +12,7 @@
 #include <vector>
 #include <cstring>
 #include <optional>
+#include <set>
 
 const uint32_t WIDTH = 800;
 const uint32_t HEIGHT = 600;
@@ -27,6 +28,10 @@ const bool enableValidationLayers = true;
 const std::vector<const char*> validationLayers =
 {
     "VK_LAYER_KHRONOS_validation"
+};
+
+const std::vector<const char*> deviceExtensions = {
+    VK_KHR_SWAPCHAIN_EXTENSION_NAME
 };
 
 static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
@@ -101,14 +106,34 @@ private:
     
     bool isDeviceSuitable(VkPhysicalDevice device)
     {
-//        VkPhysicalDeviceProperties deviceProperties;
-//        VkPhysicalDeviceFeatures deviceFeatures;
-//        vkGetPhysicalDeviceProperties(device, &deviceProperties);
-//        vkGetPhysicalDeviceFeatures(device, &deviceFeatures);
-//        return deviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU;
-        QueueFamilyIndices indices = findQueueFamilies(device);
 
-        return indices.isComplete();
+        QueueFamilyIndices indices = findQueueFamilies(device);
+        
+        VkPhysicalDeviceProperties deviceProperties;
+        VkPhysicalDeviceFeatures deviceFeatures;
+        vkGetPhysicalDeviceProperties(device, &deviceProperties);
+        vkGetPhysicalDeviceFeatures(device, &deviceFeatures);
+        bool isExtSupported = checkDeviceExtensionSupport(device);
+        return indices.isComplete() && isExtSupported &&
+                (deviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU || deviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU);
+
+    }
+    
+    bool checkDeviceExtensionSupport(VkPhysicalDevice device) {
+        
+        uint32_t extensionCount;
+        vkEnumerateDeviceExtensionProperties(device, nullptr, &extensionCount, nullptr);
+
+        std::vector<VkExtensionProperties> availableExtensions(extensionCount);
+        vkEnumerateDeviceExtensionProperties(device, nullptr, &extensionCount, availableExtensions.data());
+
+        std::set<std::string> requiredExtensions(deviceExtensions.begin(), deviceExtensions.end());
+
+        for (const auto& extension : availableExtensions) {
+            requiredExtensions.erase(extension.extensionName);
+        }
+
+        return requiredExtensions.empty();
     }
     
     QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device)
@@ -124,7 +149,7 @@ private:
         int i = 0;
         for (const auto& queueFamily : queueFamilies) {
             if (queueFamily.queueFlags & VK_QUEUE_GRAPHICS_BIT) {
-                indices.graphicsFamily = i;
+                indices.graphicsFamily=i;
             }
 
             i++;
