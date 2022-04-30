@@ -227,7 +227,6 @@ void cleanup()
         glfwTerminate();
     }
 
-//#-----------------------------------------------
 bool checkValidationLayerSupport()
     {
         uint32_t layerCount;
@@ -252,7 +251,6 @@ bool checkValidationLayerSupport()
 
     }
     
-//#-----------------------------------------------
 std::vector<const char*> getRequiredExtensions()
     {
         uint32_t glfwExtensionCount = 0;
