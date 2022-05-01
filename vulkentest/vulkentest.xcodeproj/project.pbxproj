@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA87BE65281EC515001C0533 /* HelloTriangleApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA87BE64281EC515001C0533 /* HelloTriangleApplication.cpp */; };
 		BAE4A4B727D10CB9005FC206 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAE4A4B627D10CB9005FC206 /* main.cpp */; };
 		BAE4A4C127D255FD005FC206 /* libglfw.3.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE4A4C027D255FD005FC206 /* libglfw.3.4.dylib */; };
 		BAE4A4C827D2E5C2005FC206 /* libvulkan.1.3.204.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE4A4C727D2E5C2005FC206 /* libvulkan.1.3.204.dylib */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BA87BE63281E9C5D001C0533 /* HelloTriangleApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloTriangleApplication.h; sourceTree = "<group>"; };
+		BA87BE64281EC515001C0533 /* HelloTriangleApplication.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HelloTriangleApplication.cpp; sourceTree = "<group>"; };
 		BAE4A4B327D10CB9005FC206 /* vulkentest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vulkentest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAE4A4B627D10CB9005FC206 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BAE4A4BE27D2558D005FC206 /* libvulkan.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvulkan.dylib; path = ../../../../../usr/local/lib/libvulkan.dylib; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				BAE4A4B627D10CB9005FC206 /* main.cpp */,
+				BA87BE63281E9C5D001C0533 /* HelloTriangleApplication.h */,
+				BA87BE64281EC515001C0533 /* HelloTriangleApplication.cpp */,
 			);
 			path = vulkentest;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAE4A4B727D10CB9005FC206 /* main.cpp in Sources */,
+				BA87BE65281EC515001C0533 /* HelloTriangleApplication.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
