@@ -49,14 +49,21 @@ static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
 class HelloTriangleApplication
 {
     
-    struct QueueFamilyIndices {
+    struct QueueFamilyIndices
+    {
         std::optional<uint32_t> graphicsFamily;
         bool isComplete()
         {
             return graphicsFamily.has_value();
         }
     };
-
+    
+    struct SwapChainSupportDetails
+    {
+        VkSurfaceCapabilitiesKHR capabilities;
+        std::vector<VkSurfaceFormatKHR> formats;
+        std::vector<VkPresentModeKHR> presentModes;
+    };
     
 public:
     HelloTriangleApplication():window(nullptr)
@@ -117,6 +124,12 @@ private:
         return indices.isComplete() && isExtSupported &&
                 (deviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU || deviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU);
 
+    }
+    
+    SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device) {
+        SwapChainSupportDetails details;
+
+        return details;
     }
     
     bool checkDeviceExtensionSupport(VkPhysicalDevice device) {
