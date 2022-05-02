@@ -45,6 +45,11 @@ class HelloTriangleApplication
     VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
     VkDevice device;
     VkQueue graphicsQueue;
+    VkSwapchainKHR swapChain;
+    std::vector<VkImage> swapChainImages;
+    VkFormat swapChainImageFormat;
+    VkExtent2D swapChainExtent;
+    std::vector<VkImageView> swapChainImageViews;
     
     struct QueueFamilyIndices
     {
@@ -84,6 +89,8 @@ private:
         createSurface();
         pickPhysicalDevice();
         createLogicalDevice();
+        createSwapChain();
+        createImageViews();
     }
     
     void mainLoop();
@@ -94,7 +101,9 @@ private:
     void createSurface();
     void pickPhysicalDevice();
     void createLogicalDevice();
-    
+    void createSwapChain();
+    void createImageViews();
+
     
     
     bool isDeviceSuitable(VkPhysicalDevice device);
@@ -108,6 +117,9 @@ private:
     void DestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger, const VkAllocationCallbacks* pAllocator);
     bool checkValidationLayerSupport();
     std::vector<const char*> getRequiredExtensions();
+    VkSurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR>& availableFormats);
+    VkPresentModeKHR chooseSwapPresentMode(const std::vector<VkPresentModeKHR>& availablePresentModes);
+    VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities);
 };
 
 #endif /* HelloTriangleApplication_h */
