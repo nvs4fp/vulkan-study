@@ -464,3 +464,8 @@ void HelloTriangleApplication::createSurface() {
         throw std::runtime_error("failed to create window surface!");
     }
 }
+
+void HelloTriangleApplication::createGraphicsPipeline()
+{
+    
+}
