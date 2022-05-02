@@ -49,6 +49,7 @@ class HelloTriangleApplication
     std::vector<VkImage> swapChainImages;
     VkFormat swapChainImageFormat;
     VkExtent2D swapChainExtent;
+    std::vector<VkImageView> swapChainImageViews;
     
     struct QueueFamilyIndices
     {
@@ -89,6 +90,7 @@ private:
         pickPhysicalDevice();
         createLogicalDevice();
         createSwapChain();
+        createImageViews();
     }
     
     void mainLoop();
@@ -100,7 +102,8 @@ private:
     void pickPhysicalDevice();
     void createLogicalDevice();
     void createSwapChain();
-    
+    void createImageViews();
+
     
     
     bool isDeviceSuitable(VkPhysicalDevice device);

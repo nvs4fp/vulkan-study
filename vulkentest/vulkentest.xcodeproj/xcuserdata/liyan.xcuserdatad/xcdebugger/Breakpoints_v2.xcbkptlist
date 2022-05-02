@@ -62,8 +62,8 @@
             filePath = "vulkentest/HelloTriangleApplication.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
             landmarkName = "HelloTriangleApplication::chooseSwapExtent(capabilities)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,9 +78,25 @@
             filePath = "vulkentest/HelloTriangleApplication.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "HelloTriangleApplication::chooseSwapExtent(capabilities)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B2C42E6-1A7A-4155-ADB2-A6F042BCD8EE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "vulkentest/HelloTriangleApplication.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "HelloTriangleApplication::createSwapChain()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
