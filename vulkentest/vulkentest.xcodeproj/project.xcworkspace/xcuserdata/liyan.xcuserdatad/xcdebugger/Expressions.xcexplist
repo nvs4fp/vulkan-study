@@ -3,10 +3,21 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "HelloTriangleApplication::isDeviceSuitable(VkPhysicalDevice_T*):HelloTriangleApplication.cpp">
+      </ContextState>
+      <ContextState
          contextName = "HelloTriangleApplication::QueueFamilyIndices::isComplete():main.cpp">
          <PersistentStrings>
             <PersistentString
                value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HelloTriangleApplication::chooseSwapExtent(VkSurfaceCapabilitiesKHR const&amp;):HelloTriangleApplication.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "capabilities.currentExtent.width ">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
