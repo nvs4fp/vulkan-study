@@ -31,6 +31,9 @@
 /* Begin PBXFileReference section */
 		BA87BE63281E9C5D001C0533 /* HelloTriangleApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloTriangleApplication.h; sourceTree = "<group>"; };
 		BA87BE64281EC515001C0533 /* HelloTriangleApplication.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HelloTriangleApplication.cpp; sourceTree = "<group>"; };
+		BA87BE6C2820D5D5001C0533 /* shader_vert.spv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shader_vert.spv; sourceTree = "<group>"; };
+		BA87BE6D2820D5D5001C0533 /* compile.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = compile.sh; sourceTree = "<group>"; };
+		BA87BE6E2820D5D5001C0533 /* shader_frag.spv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shader_frag.spv; sourceTree = "<group>"; };
 		BAE4A4B327D10CB9005FC206 /* vulkentest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vulkentest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAE4A4B627D10CB9005FC206 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BAE4A4BE27D2558D005FC206 /* libvulkan.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libvulkan.dylib; path = ../../../../../usr/local/lib/libvulkan.dylib; sourceTree = "<group>"; };
@@ -74,6 +77,9 @@
 		BAE4A4B527D10CB9005FC206 /* vulkentest */ = {
 			isa = PBXGroup;
 			children = (
+				BA87BE6D2820D5D5001C0533 /* compile.sh */,
+				BA87BE6E2820D5D5001C0533 /* shader_frag.spv */,
+				BA87BE6C2820D5D5001C0533 /* shader_vert.spv */,
 				BAE4A4B627D10CB9005FC206 /* main.cpp */,
 				BA87BE63281E9C5D001C0533 /* HelloTriangleApplication.h */,
 				BA87BE64281EC515001C0533 /* HelloTriangleApplication.cpp */,

@@ -50,6 +50,15 @@ class HelloTriangleApplication
     VkFormat swapChainImageFormat;
     VkExtent2D swapChainExtent;
     std::vector<VkImageView> swapChainImageViews;
+    VkPipelineLayout pipelineLayout;
+    VkRenderPass renderPass;
+    VkPipeline graphicsPipeline;
+    std::vector<VkFramebuffer> swapChainFramebuffers;
+    VkCommandPool commandPool;
+    VkCommandBuffer commandBuffer;
+    VkSemaphore imageAvailableSemaphore;
+    VkSemaphore renderFinishedSemaphore;
+    VkFence inFlightFence;
     
     struct QueueFamilyIndices
     {
@@ -82,17 +91,7 @@ public:
     
 private:
     
-    void initVulkan()
-    {
-        createInstance();
-        setupDebugMessenger();
-        createSurface();
-        pickPhysicalDevice();
-        createLogicalDevice();
-        createSwapChain();
-        createImageViews();
-    }
-    
+    void initVulkan();    
     void mainLoop();
     void cleanup();
     
@@ -103,8 +102,13 @@ private:
     void createLogicalDevice();
     void createSwapChain();
     void createImageViews();
-
-    
+    void createRenderPass();
+    void createGraphicsPipeline();
+    void createFramebuffers();
+    void createCommandPool();
+    void createCommandBuffer();
+    void drawFrame();
+    void createSyncObjects();
     
     bool isDeviceSuitable(VkPhysicalDevice device);
     SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device);
@@ -120,6 +124,10 @@ private:
     VkSurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR>& availableFormats);
     VkPresentModeKHR chooseSwapPresentMode(const std::vector<VkPresentModeKHR>& availablePresentModes);
     VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities);
+    
+    VkShaderModule createShaderModule(const std::vector<char>& code);
+    void recordCommandBuffer(VkCommandBuffer commandBuffer, uint32_t imageIndex);
+    
 };
 
 #endif /* HelloTriangleApplication_h */
