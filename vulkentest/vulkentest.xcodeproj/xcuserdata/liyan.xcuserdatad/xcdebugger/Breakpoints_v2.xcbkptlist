@@ -30,8 +30,8 @@
             filePath = "vulkentest/HelloTriangleApplication.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "HelloTriangleApplication::isDeviceSuitable(device)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "vulkentest/HelloTriangleApplication.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "HelloTriangleApplication::isDeviceSuitable(device)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "vulkentest/HelloTriangleApplication.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "HelloTriangleApplication::chooseSwapExtent(capabilities)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "vulkentest/HelloTriangleApplication.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
             landmarkName = "HelloTriangleApplication::chooseSwapExtent(capabilities)"
             landmarkType = "7">
          </BreakpointContent>
@@ -87,16 +87,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3B2C42E6-1A7A-4155-ADB2-A6F042BCD8EE"
+            uuid = "8920CC52-0130-44B1-8739-B19BDF0F3B7C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vulkentest/HelloTriangleApplication.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "HelloTriangleApplication::createSwapChain()"
+            startingLineNumber = "508"
+            endingLineNumber = "508"
+            landmarkName = "HelloTriangleApplication::createGraphicsPipeline()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

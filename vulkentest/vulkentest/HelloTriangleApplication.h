@@ -50,6 +50,9 @@ class HelloTriangleApplication
     VkFormat swapChainImageFormat;
     VkExtent2D swapChainExtent;
     std::vector<VkImageView> swapChainImageViews;
+    VkPipelineLayout pipelineLayout;
+    VkRenderPass renderPass;
+    VkPipeline graphicsPipeline;
     
     struct QueueFamilyIndices
     {
@@ -82,18 +85,7 @@ public:
     
 private:
     
-    void initVulkan()
-    {
-        createInstance();
-        setupDebugMessenger();
-        createSurface();
-        pickPhysicalDevice();
-        createLogicalDevice();
-        createSwapChain();
-        createImageViews();
-        createGraphicsPipeline();
-    }
-    
+    void initVulkan();    
     void mainLoop();
     void cleanup();
     
@@ -104,6 +96,7 @@ private:
     void createLogicalDevice();
     void createSwapChain();
     void createImageViews();
+    void createRenderPass();
     void createGraphicsPipeline();
 
     
@@ -122,6 +115,8 @@ private:
     VkSurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR>& availableFormats);
     VkPresentModeKHR chooseSwapPresentMode(const std::vector<VkPresentModeKHR>& availablePresentModes);
     VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities);
+    
+    VkShaderModule createShaderModule(const std::vector<char>& code);
 };
 
 #endif /* HelloTriangleApplication_h */
