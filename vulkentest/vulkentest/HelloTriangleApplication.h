@@ -56,6 +56,9 @@ class HelloTriangleApplication
     std::vector<VkFramebuffer> swapChainFramebuffers;
     VkCommandPool commandPool;
     VkCommandBuffer commandBuffer;
+    VkSemaphore imageAvailableSemaphore;
+    VkSemaphore renderFinishedSemaphore;
+    VkFence inFlightFence;
     
     struct QueueFamilyIndices
     {
@@ -105,6 +108,7 @@ private:
     void createCommandPool();
     void createCommandBuffer();
     void drawFrame();
+    void createSyncObjects();
     
     bool isDeviceSuitable(VkPhysicalDevice device);
     SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device);
