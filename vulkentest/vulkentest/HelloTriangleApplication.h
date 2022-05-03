@@ -53,6 +53,9 @@ class HelloTriangleApplication
     VkPipelineLayout pipelineLayout;
     VkRenderPass renderPass;
     VkPipeline graphicsPipeline;
+    std::vector<VkFramebuffer> swapChainFramebuffers;
+    VkCommandPool commandPool;
+    VkCommandBuffer commandBuffer;
     
     struct QueueFamilyIndices
     {
@@ -98,8 +101,10 @@ private:
     void createImageViews();
     void createRenderPass();
     void createGraphicsPipeline();
-
-    
+    void createFramebuffers();
+    void createCommandPool();
+    void createCommandBuffer();
+    void drawFrame();
     
     bool isDeviceSuitable(VkPhysicalDevice device);
     SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device);
@@ -117,6 +122,8 @@ private:
     VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities);
     
     VkShaderModule createShaderModule(const std::vector<char>& code);
+    void recordCommandBuffer(VkCommandBuffer commandBuffer, uint32_t imageIndex);
+    
 };
 
 #endif /* HelloTriangleApplication_h */
