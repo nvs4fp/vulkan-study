@@ -60,6 +60,7 @@ class HelloTriangleApplication
     std::vector<VkSemaphore> renderFinishedSemaphores;
     std::vector<VkFence> inFlightFences;
     uint32_t currentFrame = 0;
+    bool framebufferResized = false;
     
     struct QueueFamilyIndices
     {
@@ -111,6 +112,8 @@ private:
     void drawFrame();
     void createSyncObjects();
     
+    void recreateSwapChain();
+    
     bool isDeviceSuitable(VkPhysicalDevice device);
     SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device);
     bool checkDeviceExtensionSupport(VkPhysicalDevice device);
@@ -128,6 +131,7 @@ private:
     
     VkShaderModule createShaderModule(const std::vector<char>& code);
     void recordCommandBuffer(VkCommandBuffer commandBuffer, uint32_t imageIndex);
+    void cleanupSwapChain();
     
 };
 
